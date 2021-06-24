@@ -11,7 +11,6 @@ import org.springframework.data.annotation.LastModifiedBy;
 import org.springframework.data.annotation.LastModifiedDate;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.UUID;
@@ -42,9 +41,8 @@ public class Order {
     @Column(name = "AMOUNT", precision = 19, scale = 2)
     private BigDecimal amount;
 
-    @Column(name = "DATE_", nullable = false)
+    @Column(name = "DATE_")
     @Temporal(TemporalType.DATE)
-    @NotNull
     private Date date;
 
     @Column(name = "VERSION", nullable = false)
@@ -77,6 +75,14 @@ public class Order {
     @Column(name = "DELETED_DATE")
     @Temporal(TemporalType.TIMESTAMP)
     private Date deletedDate;
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    public Date getDate() {
+        return date;
+    }
 
     public String getOrderNumber() {
         return orderNumber;
@@ -172,14 +178,6 @@ public class Order {
 
     public void setAmount(BigDecimal amount) {
         this.amount = amount;
-    }
-
-    public Date getDate() {
-        return date;
-    }
-
-    public void setDate(Date date) {
-        this.date = date;
     }
 
     public UUID getId() {
