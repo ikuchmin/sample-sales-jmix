@@ -9,5 +9,8 @@
         <item screen="sales_Product.browse"
               caption="msg://com.company.samplesales.screen.product/productBrowse.caption"/>
     </menu>
+    <menu id="cubaScreens" caption="msg://com.company.samplesales/menu_config.cubaScreens">
+        <item screen="sales_CubaScreen" caption="msg://com.company.samplesales.screen.cuba/cubaScreen.caption"/>
+    </menu>
 
 </menu-config>
