@@ -8,6 +8,8 @@
         <item screen="sales_Order.browse" caption="msg://com.company.samplesales.screen.order/orderBrowse.caption"/>
         <item screen="sales_Product.browse"
               caption="msg://com.company.samplesales.screen.product/productBrowse.caption"/>
+        <item screen="sales_EntityWithFile.browse"
+              caption="msg://com.company.samplesales.screen.entitywithfile/entityWithFileBrowse.menu"/>
     </menu>
 
 </menu-config>
