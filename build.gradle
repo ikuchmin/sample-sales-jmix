@@ -15,10 +15,17 @@ version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
 
 repositories {
-    mavenCentral() 
+    mavenCentral()
     maven {
-        url 'https://global.repo.jmix.io/repository/public'
-    } 
+        url 'https://nexus.jmix.io/repository/public'
+    }
+    maven {
+        url 'https://nexus.jmix.io/repository/premium'
+        credentials {
+            username rootProject['premiumRepoUser']
+            password rootProject['premiumRepoPass']
+        }
+    }
 }
 
 dependencies {
@@ -32,6 +39,11 @@ dependencies {
     implementation 'io.jmix.security:jmix-security-ui-starter'
     implementation 'io.jmix.security:jmix-security-data-starter'
 
+    implementation 'io.jmix.graphql:jmix-graphql-starter'
+    runtimeOnly 'com.graphql-java-kickstart:graphiql-spring-boot-starter:8.1.1'
+    implementation("io.jmix.security:jmix-security-oauth2-starter")
+    implementation("io.jmix.rest:jmix-rest-starter")
+
     implementation 'io.jmix.localfs:jmix-localfs-starter'
     implementation "io.jmix.awsfs:jmix-awsfs-starter"
 
@@ -42,6 +54,7 @@ dependencies {
     testImplementation('org.springframework.boot:spring-boot-starter-test') {
         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
     }
+
 }
 
 test {
