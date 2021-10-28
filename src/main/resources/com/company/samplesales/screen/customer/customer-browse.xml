@@ -42,7 +42,6 @@
                 <action id="create" type="create"/>
                 <action id="edit" type="edit"/>
                 <action id="remove" type="remove"/>
-                <action id="showEntityInfo" type="showEntityInfo"/>
             </actions>
             <columns>
                 <column id="name"/>
