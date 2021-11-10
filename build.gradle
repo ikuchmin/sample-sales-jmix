@@ -45,7 +45,6 @@ dependencies {
         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
     }
     implementation "io.jmix.ldap:jmix-ldap-starter"
-    implementation 'io.jmix.cuba:jmix-cuba-starter'
 
 }
 
